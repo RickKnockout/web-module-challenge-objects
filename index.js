@@ -54,9 +54,21 @@ Using the burger object below do the following:
 const burger = {
   name: "Burger", 
   price: 18, 
-  category: "Lunch", 
-  
+  category: "Lunch",
+  discount: function(status){
+    if (status === "teacher" || status === "student"){
+      return burger.price * .75;
+    } else {
+      return burger.price * .90;
+    }
+  }
 }
+
+let teacherDiscount = burger.discount("teacher");
+console.log ("Teacher: " + teacherDiscount);
+let publicDiscount = burger.discount("public");
+console.log ("Public: " + publicDiscount);
+
 
 
 
