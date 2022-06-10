@@ -16,7 +16,11 @@ The function should:
 */
 
 function createMenuItem(a,b,c){
-  return "{name: '" + a + "', price: " + b + ", category: '" + c + "'}"
+  let tempObj = {};
+  tempObj.name = a;
+  tempObj.price = b;
+  tempObj.category = c;
+  return tempObj;
 }
 
 
@@ -145,8 +149,8 @@ function getReviewByIndex(arr,index) {
   let strName = arr[index].name;
   let intStars = arr[index].rating;
   let strFeedback = arr[index].feedback;
-  let strReturn = strName + " gave the restaurant a " + intStars + " review, and their feedback was: " + strFeedback;
-  return (strReturn);
+  let strReturn = strName + " gave the restaurant a " + intStars + " star review, and their feedback was: " + strFeedback;
+  return strReturn;
 }
 
 let reviewByIndexTest = getReviewByIndex(reviews,0);
@@ -167,10 +171,19 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(arr) {
+  let lastIndex = arr[arr.length - 1]
+ 	//console.log(lastIndex);
+  let strName = lastIndex.name;
+  //console.log(strName);
+  let intStars = lastIndex.rating;
+  let strFeedback = lastIndex.feedback;
+  let strReturn = strName + " gave the restaurant a " + intStars + " star review, and their feedback was: " + strFeedback;
+  return strReturn;
 } 
 
+getLastReview(reviews);
+console.log(getLastReview(reviews));
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
